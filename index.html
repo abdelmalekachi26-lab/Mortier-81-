@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de Tir Mortier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Simulateur de Tir Mortier</h1>
+            <div class="mission-info">
+                <div class="mission-item">Distance: 1250m</div>
+                <div class="mission-item">Azimut initial: 1420 mils</div>
+                <div class="mission-item">Charge: 2</div>
+            </div>
+        </header>
+
+        <div class="battlefield" id="battlefield">
+            <div class="target" id="target">Cible</div>
+            <div class="impact" id="impact"></div>
+            <div class="grid"></div>
+            <div class="coordinates" id="coordinates">Position: -</div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <h3>Réglages de Tir</h3>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Azimut (mils):</label>
+                        <input type="number" id="azimut" value="1420">
+                    </div>
+                    <div class="input-group">
+                        <label>Portée (m):</label>
+                        <input type="number" id="portee" value="1250">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Charge:</label>
+                    <select id="charge">
+                        <option value="1">Charge 1</option>
+                        <option value="2" selected>Charge 2</option>
+                        <option value="3">Charge 3</option>
+                        <option value="4">Charge 4</option>
+                    </select>
+                </div>
+                <button id="bouton-tir" class="bouton-feu">🎯 ORDRE DE TIR</button>
+            </div>
+
+            <div class="control-group">
+                <h3>Observation</h3>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Écart distance (m):</label>
+                        <input type="number" id="ecart-distance" placeholder="+50 / -30">
+                    </div>
+                    <div class="input-group">
+                        <label>Écart direction (m):</label>
+                        <input type="number" id="ecart-direction" placeholder="+20 / -15">
+                    </div>
+                </div>
+                <button id="bouton-correction" class="bouton-correction">📊 CALCULER CORRECTION</button>
+                <div id="resultat-correction" class="resultat-correction"></div>
+            </div>
+        </div>
+
+        <div class="journal">
+            <h3>Journal des Tirs</h3>
+            <div id="entrees-journal"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
